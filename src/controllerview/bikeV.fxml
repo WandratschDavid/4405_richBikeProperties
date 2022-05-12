@@ -14,6 +14,12 @@
         <TextField fx:id="tfText" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
         <Label text="Preis:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
         <TextField fx:id="tfPreis" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="Preis:" GridPane.rowIndex="3" />
+        <Label text="Verfügbar ab:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <DatePicker fx:id="dpVerfuegbar" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Label text="Farbe:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <ChoiceBox fx:id="cbFarbe" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
         <columnConstraints>
             <ColumnConstraints prefWidth="70.0"/>
             <ColumnConstraints hgrow="ALWAYS"/>

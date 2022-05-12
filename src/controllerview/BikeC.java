@@ -8,12 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.converter.BigDecimalStringConverter;
 import model.Bike;
+import model.Farbe;
 //import util.NullableBigDecimalStringConverter;
 
 import java.io.IOException;
@@ -48,13 +47,18 @@ public class BikeC
 	@FXML
 	private Button btSave;
 
+	@FXML
+	private DatePicker dpVerfuegbar;
+
+	@FXML
+	private ChoiceBox<Farbe> cbFarbe;
+
 	private Bike model;
 	private BooleanProperty hideNonkeyProperty = new SimpleBooleanProperty();
 
 
 	/**
 	 * View in gegebener Stage anzeigen
-	 *
 	 * @param stage gegebene Stage
 	 */
 	public static void show(Stage stage)
@@ -120,6 +124,8 @@ public class BikeC
 		tfMarkeType.disableProperty().bind(hideNonkeyProperty);
 		tfText.disableProperty().bind(hideNonkeyProperty);
 		tfPreis.disableProperty().bind(hideNonkeyProperty);
+		dpVerfuegbar.disableProperty().bind(hideNonkeyProperty);
+		cbFarbe.disableProperty().bind(hideNonkeyProperty);
 
 		// Dis/Enable Buttons
 		btSelect.disableProperty().bind(hideNonkeyProperty.not());
@@ -140,6 +146,8 @@ public class BikeC
 			tfMarkeType.textProperty().unbindBidirectional(model.markeTypeProperty());
 			tfText.textProperty().unbindBidirectional(model.textProperty());
 			tfPreis.textProperty().unbindBidirectional(model.preisProperty());
+			dpVerfuegbar.valueProperty().unbindBidirectional(model.dateProperty());
+			cbFarbe.valueProperty().unbindBidirectional(model.farbeProperty());
 		}
 
 		tfRahmennr.setText("");
@@ -164,6 +172,8 @@ public class BikeC
 			tfText.textProperty().bindBidirectional(model.textProperty());
 			tfPreis.textProperty().bindBidirectional(model.preisProperty(), new BigDecimalStringConverter());
             //tfPreis.textProperty().bindBidirectional(model.preisProperty(), new NullableBigDecimalStringConverter(NUMBERFORMAT_2DECIMALS));
+			dpVerfuegbar.valueProperty().bindBidirectional(model.dateProperty());
+			cbFarbe.valueProperty().bindBidirectional(model.farbeProperty());
 
 			hideNonkeyProperty.set(false);
 		}
@@ -201,7 +211,7 @@ public class BikeC
 	}
 
 	/**
-	 * Anzeige eines Fehlerss
+	 * Anzeige eines Fehlers
 	 * @param msg Fehlernachricht
 	 */
 	private void error(String msg)

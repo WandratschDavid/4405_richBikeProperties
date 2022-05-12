@@ -8,9 +8,11 @@ import javafx.beans.property.StringProperty;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 /**
  * Model-Klasse Bike
@@ -21,10 +23,12 @@ public class Bike
 	private final StringProperty markeType = new SimpleStringProperty();
 	private final StringProperty text = new SimpleStringProperty();
 	private final ObjectProperty<BigDecimal> preis = new SimpleObjectProperty<>();
+	private final ObjectProperty<LocalDate> date = new SimpleObjectProperty<>();
+	private final ObjectProperty<Farbe> farbe = new SimpleObjectProperty<>();
+
 
 	/**
 	 * Konstruktor aus Rahmennummer
-	 *
 	 * @param rahmennr Rahmennummer
 	 */
 	public Bike(String rahmennr)
@@ -34,27 +38,27 @@ public class Bike
 
 	/**
 	 * Konstruktor mit allen Attributen.
-	 *
 	 * @param rahmennr  Rahmennummer
 	 * @param markeType Marke und Type
 	 * @param text      Kommentar
 	 * @param preis     Preis
+	 * @param date      LocalDate
+	 * @param farbe     Farbe
 	 */
-	public Bike(String rahmennr, String markeType, String text, BigDecimal preis)
+	public Bike(String rahmennr, String markeType, String text, BigDecimal preis, LocalDate date, Farbe farbe)
 	{
 		setRahmennr(rahmennr);
 		setMarkeType(markeType);
 		setText(text);
 		setPreis(preis);
+		setDate(date);
+		setFarbe(farbe);
 	}
 
 	/**
 	 * Selektion eines Bike aus der Datenbank.
-	 *
 	 * @param rahmennr Rahmennummer
-	 *
 	 * @return Bike
-	 *
 	 * @throws SQLException
 	 * @throws BikeException
 	 */
@@ -70,7 +74,9 @@ public class Bike
 			bike = new Bike(resultSet.getString("rahmennr"),
 			                resultSet.getString("markeType"),
 			                resultSet.getString("text"),
-			                resultSet.getBigDecimal("preis")
+			                resultSet.getBigDecimal("preis"),
+			                resultSet.getDate("date").toLocalDate(),
+			                Farbe.valueOf(resultSet.getString("farbe"))
 			);
 		}
 		else
@@ -141,9 +147,39 @@ public class Bike
 		return preis;
 	}
 
+	public LocalDate getDate()
+	{
+		return date.get();
+	}
+
+	public ObjectProperty<LocalDate> dateProperty()
+	{
+		return date;
+	}
+
+	public void setDate(LocalDate date)
+	{
+		this.date.set(date);
+	}
+
+	public Farbe getFarbe()
+	{
+		return farbe.get();
+	}
+
+	public ObjectProperty<Farbe> farbeProperty()
+	{
+		return farbe;
+	}
+
+	public void setFarbe(Farbe farbe)
+	{
+		this.farbe.set(farbe);
+	}
+
+
 	/**
 	 * Defaulting und Überprüfung. Wird vor jedem Schreiben auf die Datenbank aufgerufen.
-	 *
 	 * @throws BikeException
 	 */
 	private void fillAndKill() throws BikeException
@@ -177,6 +213,16 @@ public class Bike
 		{
 			throw new BikeException("Preis muss angegeben werden!");
 		}
+
+		if(date.get() == null)
+		{
+			throw new BikeException("Verfügbarkeitsdatum muss angegeben werden!");
+		}
+
+		if(farbe.get() == null)
+		{
+			throw new BikeException("Farbe muss angegeben werden!");
+		}
 	}
 
 	/**
@@ -184,7 +230,6 @@ public class Bike
 	 * <p>
 	 * Zunächst wird versucht das Bike einzufügen. Wenn dies wegen einer Primärschlüssel-Violation schief geht, wird
 	 * versucht es abzuändern. (insert-default-update)
-	 *
 	 * @throws BikeException
 	 * @throws SQLException
 	 * @throws IOException
@@ -201,6 +246,9 @@ public class Bike
 			pstmt.setString(2, getMarkeType());
 			pstmt.setString(3, getText());
 			pstmt.setBigDecimal(4, getPreis());
+			pstmt.setDate(5, Date.valueOf(getDate()));
+			pstmt.setString(6, getFarbe().toString());
+
 			pstmt.execute();
 		}
 		catch (SQLException e)
@@ -214,6 +262,9 @@ public class Bike
 				pstmt.setString(2, getText());
 				pstmt.setBigDecimal(3, getPreis());
 				pstmt.setString(4, getRahmennr());
+				pstmt.setDate(5, Date.valueOf(getDate()));
+				pstmt.setString(6, getFarbe().toString());
+
 				pstmt.execute();
 			}
 			else

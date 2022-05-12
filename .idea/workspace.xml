@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80d379-38f5-4f0d-b811-d35aa4b13206" name="Changes" comment="added TheMain class">
+    <list default="true" id="6a80d379-38f5-4f0d-b811-d35aa4b13206" name="Changes" comment="added teachers solution of previous exercise">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TheMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TheMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllerview/BikeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllerview/BikeC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllerview/bikeV.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllerview/bikeV.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TheMainCreateDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TheMainCreateDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Bike.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,16 +33,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/Schuljahr 2021_22/SEW/Database/hsqldb-2.6.1/hsqldb-2.6.1/hsqldb/lib/hsqldb-jdk8.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "S:/Schuljahr 2021_22/INSY/WINJ/bank",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.TheMain">
     <configuration name="TheMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.TheMain" />
@@ -75,7 +87,9 @@
       <option name="presentableId" value="Default" />
       <updated>1652257489603</updated>
       <workItem from="1652257491746" duration="670000" />
-      <workItem from="1652353879514" duration="1457000" />
+      <workItem from="1652353879514" duration="3072000" />
+      <workItem from="1652366289488" duration="8000" />
+      <workItem from="1652374575248" duration="3077000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1652355146395</created>
@@ -91,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652355356040</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added teachers solution of previous exercise">
+      <created>1652355672069</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652355672069</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +132,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added TheMain class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added TheMain class" />
+    <MESSAGE value="added teachers solution of previous exercise" />
+    <option name="LAST_COMMIT_MESSAGE" value="added teachers solution of previous exercise" />
   </component>
 </project>

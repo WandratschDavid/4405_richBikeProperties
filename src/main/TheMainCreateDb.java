@@ -18,6 +18,8 @@ public class TheMainCreateDb
 					                                              ", markeType  varchar(256)  not null    " +
 					                                              ", text       varchar(256)  not null    " +
 					                                              ", preis      decimal(7,2)  not null    " +
+					                                              ", date       date          not null    " +
+					                                              ", farbe      varchar(256)  not null    " +
 					                                              ")");
 
 			Database.close();

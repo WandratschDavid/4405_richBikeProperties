@@ -169,6 +169,8 @@ public class Database
 						",   markeType" +
 						",   text" +
 						",   preis" +
+						",   date" +
+						",   farbe" +
 						" from bike " +
 						" where rahmennr = ?";
 
@@ -183,8 +185,10 @@ public class Database
 				+ "           ,markeType "
 				+ "           ,text "
 				+ "           ,preis "
+				+ "           ,date "
+				+ "           ,farbe "
 				+ "           ) "
-				+ " values (?,?,?,?)";
+				+ " values (?,?,?,?,?,?)";
 
 		pstmtInsert = connection.prepareStatement(sql);
 	}
@@ -195,6 +199,8 @@ public class Database
 				" set markeType  = ? " +
 				",    text       = ? " +
 				",    preis      = ? " +
+				",    date      = ? " +
+				",    farbe      = ? " +
 				" where rahmennr = ?";
 
 		pstmtUpdate = connection.prepareStatement(sql);
