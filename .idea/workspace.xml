@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80d379-38f5-4f0d-b811-d35aa4b13206" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4405_richBikeProperties.iml" afterDir="false" />
+    <list default="true" id="6a80d379-38f5-4f0d-b811-d35aa4b13206" name="Changes" comment="added TheMain class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TheMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TheMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +75,23 @@
       <option name="presentableId" value="Default" />
       <updated>1652257489603</updated>
       <workItem from="1652257491746" duration="670000" />
-      <workItem from="1652353879514" duration="967000" />
+      <workItem from="1652353879514" duration="1457000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1652355146395</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652355146395</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added TheMain class">
+      <created>1652355356040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652355356040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +107,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="added TheMain class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added TheMain class" />
   </component>
 </project>
